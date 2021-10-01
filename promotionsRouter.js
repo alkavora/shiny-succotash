@@ -33,6 +33,21 @@ promotionsRouter
 		res.setHeader('Content-Type', 'text/html');
 		res.end(`Getting promotion #${JSON.stringify(req.params)}`);
 	})
+.post((req, res, next) => {
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'text/html');
+		res.end(`Added New promotions to promotions list`);
+	})
+	.put((req, res, next) => {
+		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/html');
+		res.end(`You cannot update all promotions at once`);
+	})
+	.delete((req, res, next) => {
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'text/html');
+		res.end(`Deleting all the promotions`);
+	});
 	.post((req, res, next) => {
 		res.statusCode = 403;
 		res.setHeader('Content-Type', 'text/html');
